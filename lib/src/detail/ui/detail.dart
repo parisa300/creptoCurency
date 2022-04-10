@@ -1,3 +1,4 @@
+import 'package:creptoapp/src/home/ui/home.dart';
 import 'package:creptoapp/src/widget/itemDetail.dart';
 import 'package:creptoapp/src/widget/switchToggle.dart';
 import 'package:fl_chart/fl_chart.dart';
@@ -24,6 +25,14 @@ class DetailPage extends StatefulWidget {
 }
 
 class _DetailPageState extends State<DetailPage> {
+  @override
+  void initState() {
+    for (var i = 0; i < widget.spots.length; i++) {
+      totalSpotsValue += widget.spots[i].y;
+    }
+    super.initState();
+  }
+  double totalSpotsValue = 0.0;
   int selectedSort = 2;
   List sortStrings = [
     '1H',
@@ -46,23 +55,28 @@ class _DetailPageState extends State<DetailPage> {
           backgroundColor: Color(0xFF212244),
           leading: Padding(
             padding: EdgeInsets.only(left: 5),
-            child: SizedBox(
-              height: 3.5,
-              width: 10,
-              child: InkWell(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: themeData.primaryColor.withOpacity(0.05),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const Icon(
-                    Icons.arrow_back_ios,
-                    color: Colors.white,
-                    size: 28,
-                  ),
-                ),
-              ),
+    child: GestureDetector(
+    onTap: () =>  Navigator.pop(context),
+      child: SizedBox(
+        height: 3.5,
+        width: 10,
+        child: InkWell(
+          child: Container(
+            margin:  const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+
+              color: themeData.primaryColor.withOpacity(0.05),
+              borderRadius: BorderRadius.circular(10),
             ),
+            child: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.white,
+              size: 28,
+            ),
+          ),
+        ),
+      ),
+    ),
           ),
           automaticallyImplyLeading: false,
           titleSpacing: 0,
@@ -77,24 +91,7 @@ class _DetailPageState extends State<DetailPage> {
           ),
           centerTitle: true,
           actions: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(right: 5),
-              child: SizedBox(
-                height: 3.5,
-                width: 10,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: themeData.primaryColor.withOpacity(0.05),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const Icon(
-                    Icons.add,
-                    color: Colors.white,
-                    size: 28,
-                  ),
-                ),
-              ),
-            ),
+            IconButton(onPressed: () {  }, icon: Icon(Icons.more_vert), ),
           ],
         ),
       ),
@@ -112,13 +109,13 @@ class _DetailPageState extends State<DetailPage> {
                   height: 200,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Colors.black,
+                    color: Color(0xFF363762),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: Center(
                       child: SizedBox(
-                        width: 200,
+                        width: 300,
                         height: 400,
                         child: LineChart(
                           chart(

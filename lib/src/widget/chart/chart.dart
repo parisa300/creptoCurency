@@ -20,7 +20,7 @@ LineChartData chart(
   ];
 
   return LineChartData(
-    backgroundColor: Colors.black,
+     backgroundColor: Color(0xFF363762),
     gridData: FlGridData(
       show: !isDetailPage,
       drawVerticalLine: !isDetailPage,
@@ -28,13 +28,13 @@ LineChartData chart(
       verticalInterval: 1,
       getDrawingHorizontalLine: (value) {
         return FlLine(
-          color: const Color(0xff37434d),
+          color: const Color(0xff2d373e),
           strokeWidth: 1,
         );
       },
       getDrawingVerticalLine: (value) {
         return FlLine(
-          color: const Color(0xff37434d),
+          color: const Color(0xff2d373e),
           strokeWidth: 1,
         );
       },

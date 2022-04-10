@@ -26,19 +26,24 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Color(0xFF212244),
           leading: Padding(
             padding: EdgeInsets.only(left: 5),
-            child: SizedBox(
-              height: 3.5,
-              width: 10,
-              child: InkWell(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: themeData.primaryColor.withOpacity(0.05),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Icon(
-                    Icons.arrow_back_ios,
-                    color: Colors.white,
-                    size: 20,
+            child: GestureDetector(
+              onTap: () => "",
+              child: SizedBox(
+                height: 3.5,
+                width: 10,
+                child: InkWell(
+                  child: Container(
+                    margin:  const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+
+                      color: themeData.primaryColor.withOpacity(0.05),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.white,
+                      size: 28,
+                    ),
                   ),
                 ),
               ),
@@ -57,24 +62,7 @@ class _HomePageState extends State<HomePage> {
           ),
           centerTitle: true,
           actions: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(right: 5),
-              child: SizedBox(
-                height: 3.5,
-                width: 10,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: themeData.primaryColor.withOpacity(0.05),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Icon(
-                    Icons.add,
-                    color: Colors.white,
-                    size: 20,
-                  ),
-                ),
-              ),
-            ),
+        IconButton(onPressed: () {  }, icon: Icon(Icons.more_vert), ),
           ],
         ),
       ),

@@ -18,13 +18,13 @@ class CoinItem extends StatelessWidget {
       onTap: () {
 
         List<FlSpot> list=[
-           // FlSpot(0, 500.40),
-           // FlSpot(1, 102.34),
-           // FlSpot(2, 98.23),
-           // FlSpot(3, 100.23),
-           // FlSpot(4, 102.10),
-           // FlSpot(5, 103.85),
-           // FlSpot(6, 103.20),
+          FlSpot(0, 0.67),
+          FlSpot(1, 1.24),
+          FlSpot(2, 3.48),
+          FlSpot(3, 0.30),
+          FlSpot(4, 4.15),
+          FlSpot(5, 0.52),
+          FlSpot(6, 0.58),
          ];
 
         Navigator.push(

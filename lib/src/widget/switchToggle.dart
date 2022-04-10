@@ -20,7 +20,7 @@ class _TabDetailWidgetState extends State<SwitchToggle> {
         initialLabelIndex: 0,
         activeFgColor: Colors.white,
         inactiveFgColor: Colors.white,
-        activeBgColor: [Colors.purple],
+        activeBgColor: [ Colors.blue.shade500,],
         totalSwitches: 3,
         labels: ['Chart', 'Info', 'History'],
         onToggle: (index) {
