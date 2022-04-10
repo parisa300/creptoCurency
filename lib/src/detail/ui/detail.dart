@@ -1,3 +1,4 @@
+import 'package:creptoapp/src/widget/itemDetail.dart';
 import 'package:creptoapp/src/widget/switchToggle.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -157,6 +158,10 @@ class _DetailPageState extends State<DetailPage> {
               ),
             ),
           ),
+          Padding( padding: EdgeInsets.only(top: 5, left: 5, right: 5),
+          child: Column(
+              children: [
+                ItemDetail(),],),),
           Padding(
             padding: EdgeInsets.only(top: 5, left: 5, right: 5),
             child: Row(
