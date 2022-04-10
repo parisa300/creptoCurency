@@ -14,10 +14,10 @@ class _NavigationButtonState extends State<NavigationButton> {
   int currentPage = 0;
   var _pages = [
     HomePage(),
-    DetailPage(),
-    DetailPage(),
-    DetailPage(),
-    DetailPage(),
+    HomePage(),
+    HomePage(),
+    HomePage(),
+    HomePage(),
 
   ];
 
@@ -29,7 +29,7 @@ class _NavigationButtonState extends State<NavigationButton> {
       body: Scaffold(
         bottomNavigationBar: BottomNavigationBar(
           elevation: .0,
-          backgroundColor: Color(0xFF1e1e1e).withOpacity(.98),
+          backgroundColor: Color(0xFF212244).withOpacity(.98),
           currentIndex: currentPage,
           onTap: (i) {
             setState(() {
@@ -40,7 +40,7 @@ class _NavigationButtonState extends State<NavigationButton> {
           iconSize: _size.width / 15.0,
           showSelectedLabels: false,
           showUnselectedLabels: false,
-          selectedItemColor: Color(0xFF3928EA),
+          selectedItemColor: Color(0xFF363762),
           unselectedItemColor: Colors.grey.shade400,
           items: const [
             BottomNavigationBarItem(

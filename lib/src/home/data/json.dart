@@ -32,12 +32,37 @@ List coins = [
     "state" : 2
   },
   {
+    "name" : "Cadano",
+    "name_abb" : "ADA",
+    "image" : "https://www.meme-arsenal.com/memes/688700b41a939acf4cad09e9c84bcff6.jpg",
+    "price" : "\$3",
+    "change" : "-2%",
+    "state" : 2
+  },
+  {
     "name" : "Litecoin",
     "name_abb" : "LTC",
     "image" : "https://assets.website-files.com/5f8e21b830b6431600cd03ae/60b62164a065abc121cf7cef_1xxs0ttdkg3z.png",
     "price" : "\$200",
     "change" : "+5%",
     "state" : 1
+  },
+
+  {
+    "name" : "Litecoin",
+    "name_abb" : "LTC",
+    "image" : "https://assets.website-files.com/5f8e21b830b6431600cd03ae/60b62164a065abc121cf7cef_1xxs0ttdkg3z.png",
+    "price" : "\$200",
+    "change" : "+5%",
+    "state" : 1
+  },
+  {
+    "name" : "Shiba Inu",
+    "name_abb" : "SHIB",
+    "image" : "https://upload.wikimedia.org/wikipedia/en/5/53/Shiba_Inu_coin_logo.png",
+    "price" : "\$0.0001",
+    "change" : "10%"
+    ,"state" : 1
   },
 
 ];

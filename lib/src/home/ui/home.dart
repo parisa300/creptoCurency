@@ -16,13 +16,14 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     ThemeData themeData = Theme.of(context);
     return Scaffold(
+      backgroundColor: Color(0xFF212244),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(56.0), //appbar size
         child: AppBar(
           bottomOpacity: 0.0,
           elevation: 0.0,
           shadowColor: Colors.transparent,
-          backgroundColor: Colors.black87,
+          backgroundColor: Color(0xFF212244),
           leading: Padding(
             padding: EdgeInsets.only(left: 5),
             child: SizedBox(
