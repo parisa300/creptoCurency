@@ -1,3 +1,4 @@
+import 'package:creptoapp/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
@@ -13,7 +14,7 @@ class _TabDetailWidgetState extends State<SwitchToggle> {
   @override
   Widget build(BuildContext context) {
 
-    List<Color> colors  = [const Color(0xff8a35f4), const Color(0xff0777fe)];
+    List<Color> colors  = [BaseColors.purpleGradient, BaseColors.blueGradient];
 
     return Container(
       margin: EdgeInsets.only(top: 30.0),
@@ -21,10 +22,10 @@ class _TabDetailWidgetState extends State<SwitchToggle> {
         minWidth: 90,
         minHeight: 200,
         initialLabelIndex: 0,
-        activeFgColor: Colors.white,
-        inactiveFgColor: Colors.white,
+        activeFgColor: BaseColors.white,
+        inactiveFgColor: BaseColors.white,
         totalSwitches: 3,
-        borderColor: [Color(0xFF292976)],
+        borderColor: [BaseColors.borderColorSwitch],
         dividerColor: Colors.grey.withOpacity(0.5),
         activeBgColors: [colors  , colors , colors],
         cornerRadius: 16,
