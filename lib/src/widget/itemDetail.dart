@@ -1,5 +1,4 @@
-import 'package:creptoapp/src/widget/avatar_image.dart';
-import 'package:creptoapp/theme/colors.dart';
+import 'package:creptoapp/src/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class ItemDetail extends StatefulWidget {

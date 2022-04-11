@@ -1,11 +1,15 @@
 import 'package:creptoapp/src/detail/ui/detail.dart';
+import 'package:creptoapp/src/theme/colors.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:creptoapp/theme/colors.dart';
 
 import 'avatar_image.dart';
 
-List<Color> stateColors = [BaseColors.stayColor, BaseColors.upColor, BaseColors.downColor];
+List<Color> stateColors = [
+  BaseColors.stayColor,
+  BaseColors.upColor,
+  BaseColors.downColor
+];
 
 class CoinItem extends StatelessWidget {
   const CoinItem(this.coinData, {Key? key, this.onTap}) : super(key: key);
@@ -16,27 +20,8 @@ class CoinItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        List<FlSpot> list = [
-          const FlSpot(0, 0.67),
-          const FlSpot(1, 1.24),
-          const FlSpot(2, 3.48),
-          const FlSpot(3, 0.30),
-          const FlSpot(4, 4.15),
-          const FlSpot(5, 0.52),
-          const FlSpot(6, 0.58),
-        ];
-
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => DetailPage(
-              spots: list,
-              maxY: 11,
-              minY: 0,
-              profitPercent: 6,
-            ),
-          ),
-        );
+        List<FlSpot> list = _generateChartInfo();
+        _navigateToDetailsScreen(list, context);
       },
       child: Container(
         margin: const EdgeInsets.only(bottom: 8),
@@ -44,12 +29,12 @@ class CoinItem extends StatelessWidget {
         decoration: BoxDecoration(
           color: BaseColors.boxcolor,
           borderRadius: BorderRadius.circular(10),
-          boxShadow:  [
+          boxShadow: [
             BoxShadow(
               color: BaseColors.boxcolor,
               spreadRadius: 1,
               blurRadius: 1,
-              offset: Offset(1, 1), // changes position of shadow
+              offset: const Offset(1, 1), // changes position of shadow
             ),
           ],
         ),
@@ -78,21 +63,22 @@ class CoinItem extends StatelessWidget {
                                 child: Text(coinData['name'],
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
-                                    style:  TextStyle(
+                                    style: TextStyle(
                                         fontSize: 14,
                                         color: BaseColors.white,
                                         fontWeight: FontWeight.w700)))),
-                        SizedBox(width: 5),
+                        const SizedBox(width: 5),
                         Container(
                             child: Text(coinData['price'],
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
-                                style:  TextStyle(
-                                  color: BaseColors.white,
-                                    fontSize: 12, fontWeight: FontWeight.w600)))
+                                style: TextStyle(
+                                    color: BaseColors.white,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600)))
                       ],
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     Row(
                       children: <Widget>[
                         Expanded(
@@ -101,9 +87,8 @@ class CoinItem extends StatelessWidget {
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.grey.withOpacity(0.5)
-                                  ))),
+                                      fontSize: 12,
+                                      color: Colors.grey.withOpacity(0.5)))),
                         ),
 
                         //    Container(),
@@ -135,6 +120,32 @@ class CoinItem extends StatelessWidget {
               ],
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  List<FlSpot> _generateChartInfo() {
+    return [
+      const FlSpot(0, 0.67),
+      const FlSpot(1, 1.24),
+      const FlSpot(2, 3.48),
+      const FlSpot(3, 0.30),
+      const FlSpot(4, 4.15),
+      const FlSpot(5, 0.52),
+      const FlSpot(6, 0.58),
+    ];
+  }
+
+  void _navigateToDetailsScreen(List<FlSpot> list, BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => DetailPage(
+          spots: list,
+          maxY: 11,
+          minY: 0,
+          profitPercent: 6,
         ),
       ),
     );

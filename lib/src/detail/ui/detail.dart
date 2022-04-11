@@ -1,7 +1,6 @@
-import 'package:creptoapp/src/home/ui/home.dart';
+import 'package:creptoapp/src/theme/colors.dart';
 import 'package:creptoapp/src/widget/itemDetail.dart';
 import 'package:creptoapp/src/widget/switchToggle.dart';
-import 'package:creptoapp/theme/colors.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -49,7 +48,7 @@ class _DetailPageState extends State<DetailPage> {
     ThemeData themeData = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor:BaseColors.primary,
+        backgroundColor: BaseColors.primary,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios, color: BaseColors.white),
           onPressed: () => Navigator.of(context).pop(),
@@ -83,7 +82,7 @@ class _DetailPageState extends State<DetailPage> {
                     height: 200,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color:BaseColors.boxcolor,
+                      color: BaseColors.boxcolor,
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(20.0),
@@ -177,8 +176,10 @@ class _DetailPageState extends State<DetailPage> {
                     highlightColor: themeData.primaryColor,
                     child: Container(
                       decoration: BoxDecoration(
-                        gradient:  LinearGradient(
-                            colors: [BaseColors.purpleGradient,BaseColors.blueGradient]),
+                        gradient: LinearGradient(colors: [
+                          BaseColors.purpleGradient,
+                          BaseColors.blueGradient
+                        ]),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       width: 150,

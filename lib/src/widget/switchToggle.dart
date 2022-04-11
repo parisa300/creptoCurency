@@ -1,4 +1,4 @@
-import 'package:creptoapp/theme/colors.dart';
+import 'package:creptoapp/src/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 

@@ -1,4 +1,4 @@
-import 'package:creptoapp/theme/colors.dart';
+import 'package:creptoapp/src/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -37,7 +37,7 @@ class AvatarImage extends StatelessWidget {
               color: BaseColors.shadowColor.withOpacity(0.1),
               spreadRadius: 1,
               blurRadius: 1,
-              offset: Offset(1, 1), // changes position of shadow
+              offset: const Offset(1, 1), // changes position of shadow
             ),
           ],
           image: DecorationImage(image: NetworkImage(name), fit: BoxFit.cover),

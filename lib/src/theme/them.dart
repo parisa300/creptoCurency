@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 ThemeData lightModeTheme = ThemeData(
   brightness: Brightness.light,
   backgroundColor: const Color(0xfff8f8f8),
