@@ -1,3 +1,4 @@
+import 'package:creptoapp/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,16 +17,15 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     ThemeData themeData = Theme.of(context);
     return Scaffold(
-      backgroundColor: Color(0xFF212244),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(56.0), //appbar size
         child: AppBar(
           bottomOpacity: 0.0,
           elevation: 0.0,
           shadowColor: Colors.transparent,
-          backgroundColor: Color(0xFF212244),
+          backgroundColor:BaseColors.primary,
           leading: Padding(
-            padding: EdgeInsets.only(left: 5),
+            padding: const EdgeInsets.only(left: 5),
             child: GestureDetector(
               onTap: () => "",
               child: SizedBox(
@@ -39,9 +39,9 @@ class _HomePageState extends State<HomePage> {
                       color: themeData.primaryColor.withOpacity(0.05),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: const Icon(
+                    child:  Icon(
                       Icons.arrow_back_ios,
-                      color: Colors.white,
+                      color: BaseColors.white,
                       size: 28,
                     ),
                   ),
@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
           ),
           centerTitle: true,
           actions: <Widget>[
-        IconButton(onPressed: () {  }, icon: Icon(Icons.more_vert), ),
+        IconButton(onPressed: () {  }, icon: const Icon(Icons.more_vert), ),
           ],
         ),
       ),
@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.only(top: 10, bottom: 10),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           getNewCoins(),
@@ -88,7 +88,7 @@ class _HomePageState extends State<HomePage> {
 
 getNewCoins() {
   return Container(
-    padding: EdgeInsets.only(left: 15, right: 15),
+    padding: const EdgeInsets.only(left: 15, right: 15),
     child: Column(
         children:
             List.generate(coins.length, (index) => CoinItem(coins[index]))),

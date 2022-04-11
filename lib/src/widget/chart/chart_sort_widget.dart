@@ -1,10 +1,11 @@
+import 'package:creptoapp/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
 Padding chartSortWidget(String str, bool isSelected, ThemeData themeData) {
   return Padding(
-    padding: EdgeInsets.symmetric(horizontal: 1),
+    padding: const EdgeInsets.symmetric(horizontal: 1),
     child: Container(
       decoration: BoxDecoration(
           color: isSelected
@@ -12,7 +13,7 @@ Padding chartSortWidget(String str, bool isSelected, ThemeData themeData) {
               : themeData.primaryColor.withOpacity(0.05),
           borderRadius: BorderRadius.circular(5)),
       child: Padding(
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           vertical: 1,
           horizontal: 5,
         ),
@@ -21,7 +22,7 @@ Padding chartSortWidget(String str, bool isSelected, ThemeData themeData) {
             str,
             style: GoogleFonts.lato(
               color: isSelected
-                  ? Colors.white
+                  ? BaseColors.white
                   : themeData.primaryColor.withOpacity(0.7),
               fontWeight: FontWeight.bold,
               fontSize: 13,

@@ -1,3 +1,4 @@
+import 'package:creptoapp/theme/colors.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,7 +21,7 @@ LineChartData chart(
   ];
 
   return LineChartData(
-     backgroundColor: Color(0xFF363762),
+     backgroundColor: BaseColors.boxcolor,
     gridData: FlGridData(
       show: !isDetailPage,
       drawVerticalLine: !isDetailPage,
@@ -28,13 +29,13 @@ LineChartData chart(
       verticalInterval: 1,
       getDrawingHorizontalLine: (value) {
         return FlLine(
-          color: const Color(0xff2d373e),
+          color:BaseColors.chart1,
           strokeWidth: 1,
         );
       },
       getDrawingVerticalLine: (value) {
         return FlLine(
-          color: const Color(0xff2d373e),
+          color:BaseColors.chart1,
           strokeWidth: 1,
         );
       },
@@ -50,8 +51,8 @@ LineChartData chart(
               reservedSize: 28,
               interval: 1,
               textAlign: TextAlign.start,
-              getTextStyles: (context, value) => TextStyle(
-                color: const Color(0xff68737d),
+              getTextStyles: (context, value) =>  TextStyle(
+                color:BaseColors.chart,
                 fontWeight: FontWeight.bold,
                 fontSize: 12,
               ),
@@ -81,8 +82,8 @@ LineChartData chart(
               showTitles: true,
               reservedSize: 35,
               margin: 10,
-              getTextStyles: (context, value) => TextStyle(
-                color: const Color(0xff68737d),
+              getTextStyles: (context, value) =>  TextStyle(
+                color: BaseColors.chart,
                 fontWeight: FontWeight.bold,
                 fontSize: 12,
               ),
@@ -100,7 +101,7 @@ LineChartData chart(
                     .replaceFirst('.', ',')
                     .replaceAll(RegExp(r'\B(?=(\d{3})+(?!\d))'), '.'),
                 GoogleFonts.poppins(
-                  color: Colors.white,
+                  color: BaseColors.white,
                   fontWeight: FontWeight.w500,
                   fontSize: 12,
                   letterSpacing: 0.5,

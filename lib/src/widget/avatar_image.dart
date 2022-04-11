@@ -34,7 +34,7 @@ class AvatarImage extends StatelessWidget {
           borderRadius: BorderRadius.circular(radius),
           boxShadow: [
             BoxShadow(
-              color: shadowColor.withOpacity(0.1),
+              color: BaseColors.shadowColor.withOpacity(0.1),
               spreadRadius: 1,
               blurRadius: 1,
               offset: Offset(1, 1), // changes position of shadow

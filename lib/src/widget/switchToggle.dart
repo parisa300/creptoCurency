@@ -12,6 +12,9 @@ class SwitchToggle extends StatefulWidget {
 class _TabDetailWidgetState extends State<SwitchToggle> {
   @override
   Widget build(BuildContext context) {
+
+    List<Color> colors  = [const Color(0xff8a35f4), const Color(0xff0777fe)];
+
     return Container(
       margin: EdgeInsets.only(top: 30.0),
       child: ToggleSwitch(
@@ -20,8 +23,13 @@ class _TabDetailWidgetState extends State<SwitchToggle> {
         initialLabelIndex: 0,
         activeFgColor: Colors.white,
         inactiveFgColor: Colors.white,
-        activeBgColor: [ Colors.blue.shade500,],
         totalSwitches: 3,
+        borderColor: [Color(0xFF292976)],
+        dividerColor: Colors.grey.withOpacity(0.5),
+        activeBgColors: [colors  , colors , colors],
+        cornerRadius: 16,
+        radiusStyle: true,
+        borderWidth: 0,
         labels: ['Chart', 'Info', 'History'],
         onToggle: (index) {
           print('switched to: $index');
