@@ -53,28 +53,28 @@ class _DetailsState extends State<ItemDetail> {
                           const SizedBox(width: 5),
                           Expanded(
                               child: Container(
-                                  child: const Text('Take Profit',
+                                  child:  Text('Take Profit',
                                       maxLines: 1,
                                       overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
                                           fontSize: 16,
-                                          color: Colors.white,
+                                          color: BaseColors.white,
                                           fontWeight: FontWeight.w700)))),
                           const SizedBox(width: 5),
                           Container(
-                              child: const Text('+0.0400ETH',
+                              child:  Text('+0.0400ETH',
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
                                       fontSize: 15,
-                                      color: Colors.white,
+                                      color: BaseColors.white,
                                       fontWeight: FontWeight.w600)))
                         ],
                       ),
                     ),
                   ),
-                  const Divider(
-                    color: Color(0xFF98989c),
+                   Divider(
+                     color: BaseColors.divider,
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -90,29 +90,29 @@ class _DetailsState extends State<ItemDetail> {
                           const SizedBox(width: 5),
                           Expanded(
                               child: Container(
-                                  child: const Text('Stop less',
+                                  child:  Text('Stop less',
                                       maxLines: 1,
                                       overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
                                           fontSize: 16,
-                                          color: Colors.white,
+                                          color: BaseColors.white,
                                           fontWeight: FontWeight.w700)))),
                           const SizedBox(width: 5),
                           Container(
-                              child: const Text('-0.100ETS',
+                              child:  Text('-0.100ETS',
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
                                       fontSize: 15,
-                                      color: Colors.white,
+                                      color: BaseColors.white,
                                       fontWeight: FontWeight.w600)))
                         ],
                       ),
                     ),
                   ),
                   const SizedBox(height: 5),
-                  const Divider(
-                    color: Color(0xFF98989c),
+                   Divider(
+                    color:BaseColors.divider,
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -128,12 +128,12 @@ class _DetailsState extends State<ItemDetail> {
                           const SizedBox(width: 5),
                           Expanded(
                               child: Container(
-                                  child: const Text('AutoIncrese',
+                                  child:  Text('AutoIncrese',
                                       maxLines: 1,
                                       overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
                                           fontSize: 16,
-                                          color: Colors.white,
+                                          color:BaseColors.white,
                                           fontWeight: FontWeight.w700)))),
                           const SizedBox(width: 5),
                           Container(

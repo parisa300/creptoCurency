@@ -17,4 +17,5 @@ class BaseColors{
   static Color white = Color(0xFFFFFFFF);
   static Color chart = Color(0xff68737d);
   static Color chart1 = Color(0xff2d373e);
+  static Color divider = Color(0xFF98989c);
 }
