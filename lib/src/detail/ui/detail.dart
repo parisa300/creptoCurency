@@ -53,14 +53,8 @@ class _DetailPageState extends State<DetailPage> {
           icon: Icon(Icons.arrow_back_ios, color: BaseColors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: Text(
-          "BTC ETH",
-          style: GoogleFonts.lato(
-            color: themeData.primaryColor,
-            fontWeight: FontWeight.w600,
-            fontSize: 16,
-          ),
-        ),
+        title:
+        _buildText("BTC ETH", themeData.primaryColor, FontWeight.w600),
         centerTitle: true,
         actions: <Widget>[
           IconButton(
@@ -158,15 +152,8 @@ class _DetailPageState extends State<DetailPage> {
                       width: 150,
                       height: 56,
                       child: Center(
-                        child: Text(
-                          'CLOSEOUT',
-                          style: GoogleFonts.lato(
-                            color: themeData.primaryColor.withOpacity(0.7),
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            letterSpacing: 1,
-                          ),
-                        ),
+                        child:
+                        _buildText("CLOSEOUT", themeData.primaryColor.withOpacity(0.7), FontWeight.bold),
                       ),
                     ),
                   ),
@@ -185,15 +172,8 @@ class _DetailPageState extends State<DetailPage> {
                       width: 150,
                       height: 56,
                       child: Center(
-                        child: Text(
-                          'INCREACE',
-                          style: GoogleFonts.lato(
-                            color: Colors.white.withOpacity(0.8),
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            letterSpacing: 1,
-                          ),
-                        ),
+                        child:
+                        _buildText("INCREACE", Colors.white.withOpacity(0.7), FontWeight.bold),
                       ),
                     ),
                   ),
@@ -213,6 +193,18 @@ class _DetailPageState extends State<DetailPage> {
         height: 75,
         child: Center(child: SwitchToggle()),
       ),
+    );
+  }
+
+  Widget _buildText(String text,Color color,FontWeight fontWeight){
+    return Text(
+      text,
+        style: GoogleFonts.lato(
+        color: color,
+    fontWeight:fontWeight,
+    fontSize: 15,
+    letterSpacing: 1,
+    ),
     );
   }
 }

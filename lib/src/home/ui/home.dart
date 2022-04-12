@@ -1,7 +1,7 @@
+import 'package:creptoapp/src/home/data/model/coindata.dart';
 import 'package:flutter/material.dart';
 
 import '../../widget/coinItem.dart';
-import '../data/json.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -43,11 +43,24 @@ class _HomePageState extends State<HomePage> {
   }
 
   getNewCoins() {
+    List<CoinData>list=_getCoinData();
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
           children:
-              List.generate(coins.length, (index) => CoinItem(coins[index]))),
+              List.generate(list.length, (index) => CoinItem(list[index]))),
     );
+  }
+
+  List<CoinData> _getCoinData(){
+    return [
+      CoinData("Bitcoin", "BTC", "https://g.foolcdn.com/art/companylogos/square/btc.png", 420000, "3", 1),
+      CoinData("Cadano", "ADA", "https://www.meme-arsenal.com/memes/688700b41a939acf4cad09e9c84bcff6.jpg", 420000, "-2", 2),
+      CoinData("Solana", "SOL", "https://www.pngall.com/wp-content/uploads/10/Solana-Crypto-Logo-PNG-File.png", 320000, "-1", 2),
+      CoinData("Shiba Inu", "SHIB", "https://upload.wikimedia.org/wikipedia/en/5/53/Shiba_Inu_coin_logo.png", 12000, "10", 1),
+      CoinData("Litecoin", "LTC", "https://assets.website-files.com/5f8e21b830b6431600cd03ae/60b62164a065abc121cf7cef_1xxs0ttdkg3z.png", 12000, "5", 1),
+      CoinData("Shiba Inu", "SHIB", "https://upload.wikimedia.org/wikipedia/en/5/53/Shiba_Inu_coin_logo.png", 12000, "-2", 1),
+      CoinData("Shiba Inu", "SHIB", "https://upload.wikimedia.org/wikipedia/en/5/53/Shiba_Inu_coin_logo.png", 12000, "-2", 1),
+    ];
   }
 }

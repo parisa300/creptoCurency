@@ -1,4 +1,5 @@
 import 'package:creptoapp/src/detail/ui/detail.dart';
+import 'package:creptoapp/src/home/data/model/coindata.dart';
 import 'package:creptoapp/src/theme/colors.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ List<Color> stateColors = [
 
 class CoinItem extends StatelessWidget {
   const CoinItem(this.coinData, {Key? key, this.onTap}) : super(key: key);
-  final coinData;
+  final CoinData coinData;
   final GestureTapCallback? onTap;
 
   @override
@@ -38,89 +39,8 @@ class CoinItem extends StatelessWidget {
             ),
           ],
         ),
-        child: Column(
-          children: [
-            const SizedBox(height: 2),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                AvatarImage(
-                  coinData['image'],
-                  isSVG: false,
-                  width: 30,
-                  height: 30,
-                  radius: 50,
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                    child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Row(
-                      children: <Widget>[
-                        Expanded(
-                            child: Container(
-                                child: Text(coinData['name'],
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        color: BaseColors.white,
-                                        fontWeight: FontWeight.w700)))),
-                        const SizedBox(width: 5),
-                        Container(
-                            child: Text(coinData['price'],
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                    color: BaseColors.white,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600)))
-                      ],
-                    ),
-                    const SizedBox(height: 5),
-                    Row(
-                      children: <Widget>[
-                        Expanded(
-                          child: Container(
-                              child: Text(coinData['name_abb'],
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      color: Colors.grey.withOpacity(0.5)))),
-                        ),
+        child: _buildRowItem(),
 
-                        //    Container(),
-                        Container(
-                            width: 45,
-                            height: 20,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: stateColors[coinData['state']],
-                              ),
-                              borderRadius: const BorderRadius.only(
-                                  topRight: Radius.circular(10),
-                                  topLeft: Radius.circular(10),
-                                  bottomLeft: Radius.circular(10),
-                                  bottomRight: Radius.circular(10)),
-                            ),
-                            child: Center(
-                              child: Text(coinData['change'],
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      color: stateColors[coinData['state']])),
-                            )),
-                      ],
-                    ),
-                  ],
-                )),
-              ],
-            ),
-          ],
-        ),
       ),
     );
   }
@@ -148,6 +68,110 @@ class CoinItem extends StatelessWidget {
           profitPercent: 6,
         ),
       ),
+    );
+  }
+
+  Widget _buildText(String text, FontWeight fontWeight, Color color) {
+    return Text(
+      text,
+      style: TextStyle(
+        fontWeight: fontWeight,
+        color: color,
+      ),
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
+    );
+  }
+
+  Widget _buildRowItem() {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        children: [
+          _buildIcon(),
+          const SizedBox(width: 8),
+          Expanded(
+            flex: 1,
+            child: Row(
+              children: [
+                Column(
+                  children: [
+                    _buildName(),
+                    _buildSymbol(),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Column(
+            children: [
+              _buildPrice(),
+              const SizedBox(height: 8),
+              _buildPercentage(),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget _buildName() {
+    return Text(
+      coinData.name,
+      style: TextStyle(fontWeight: FontWeight.w700, color: BaseColors.white),
+    );
+  }
+
+  Widget _buildSymbol() {
+    return Text(
+      coinData.symbol,
+      style: TextStyle(
+          fontWeight: FontWeight.w600, color: Colors.grey.withOpacity(0.5)),
+    );
+  }
+
+  Widget _buildPrice() {
+    return Text(
+      coinData.price.toString(),
+      style: TextStyle(fontWeight: FontWeight.w600, color: BaseColors.white),
+    );
+  }
+
+  Widget _buildPercentage() {
+
+    // state = 0
+    Color color = BaseColors.stayColor;
+
+    switch (coinData.state) {
+      case 1:
+        color = BaseColors.upColor;
+        break;
+
+      case 2:
+        color = BaseColors.downColor;
+        break;
+    }
+
+    return Container(
+      padding: const EdgeInsets.all(4),
+      margin: EdgeInsets.only(left: 15,right: 15),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: color)),
+      child: Text(
+        coinData.change.toString(),
+        style: TextStyle(fontWeight: FontWeight.w600, color: color),
+      ),
+    );
+  }
+
+  Widget _buildIcon() {
+    return AvatarImage(
+      coinData.image,
+      isSVG: false,
+      width: 30,
+      height: 30,
+      radius: 50,
     );
   }
 }
