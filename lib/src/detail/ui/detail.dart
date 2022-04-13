@@ -1,8 +1,10 @@
+import 'package:creptoapp/src/comment/ui/comment_view.dart';
 import 'package:creptoapp/src/theme/colors.dart';
 import 'package:creptoapp/src/widget/itemDetail.dart';
 import 'package:creptoapp/src/widget/switchToggle.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../widget/chart/chart.dart';
@@ -158,7 +160,9 @@ class _DetailPageState extends State<DetailPage> {
                     ),
                   ),
                   InkWell(
-                    onTap: () {}, //TODO: add buy action
+                    onTap: () {
+                      Get.to(CommentView());
+                    }, //TODO: add buy action
                     splashColor: themeData.primaryColor,
                     highlightColor: themeData.primaryColor,
                     child: Container(

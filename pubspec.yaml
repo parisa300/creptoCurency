@@ -37,6 +37,8 @@ dependencies:
   flutter_svg: ^0.22.0
   fl_chart: ^0.45.1
   toggle_switch: ^1.4.0
+  get: ^4.6.1
+  http: ^0.13.4
 dev_dependencies:
   flutter_test:
     sdk: flutter
