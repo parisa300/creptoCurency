@@ -1,4 +1,4 @@
-import 'package:creptoapp/src/comment/ui/comment_view.dart';
+import 'package:creptoapp/src/comment/ui/commentScreen.dart';
 import 'package:creptoapp/src/theme/colors.dart';
 import 'package:creptoapp/src/widget/itemDetail.dart';
 import 'package:creptoapp/src/widget/switchToggle.dart';
@@ -161,7 +161,7 @@ class _DetailPageState extends State<DetailPage> {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(CommentView());
+                      Get.to(CommentScreen());
                     }, //TODO: add buy action
                     splashColor: themeData.primaryColor,
                     highlightColor: themeData.primaryColor,

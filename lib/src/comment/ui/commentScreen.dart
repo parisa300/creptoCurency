@@ -2,16 +2,20 @@ import 'package:creptoapp/src/comment/data/modelComment.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CommentView extends StatelessWidget {
-  const CommentView({Key? key}) : super(key: key);
+import '../controller/commentController.dart';
+
+class CommentScreen extends StatelessWidget {
+  CommentController commentController = Get.put(CommentController());
+
+  CommentScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    commentController.setComment();
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
         body: ListView.builder(
-
           itemCount: 10,
           itemBuilder: (context, index) {
             return _buildAllItem();
@@ -19,52 +23,40 @@ class CommentView extends StatelessWidget {
         ),
       ),
     );
-    // return Container(
-    //   child: Column(
-    //     children: [
-    //       Padding(padding: EdgeInsets.all(8)),
-    //       Card(
-    //
-    //         child: ListTile()
-    //   )
-    //
-    //     ],
-    //   ),
-    // );
   }
 
   Widget _buildAllItem() {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-      children: [
-        Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(4),
-            color: Colors.white,
-          ),
-          height: 10,
-          width: Get.width,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-
-              children: [
-                Padding(padding: EdgeInsets.all(8)),
-                _circleAvatar(),
-                const SizedBox(width: 8),
-                _buildName(),
-              ],
+    return Obx((){
+     return Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(4),
+              color: Colors.white,
             ),
-            _Icon(Icons.more_vert),
-          ],
-        ),
-        _commentAndImage(),
-        _like(),
-      ],
-    );
+            height: 10,
+            width: Get.width,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Padding(padding: EdgeInsets.all(8)),
+                  _circleAvatar(),
+                  const SizedBox(width: 8),
+                  _buildName(),
+                ],
+              ),
+              _Icon(Icons.more_vert),
+            ],
+          ),
+          _commentAndImage(),
+          _like(),
+        ],
+      );
+    });
   }
 
   Widget _buildName() {
@@ -86,14 +78,13 @@ class CommentView extends StatelessWidget {
     );
   }
 
-  Widget _like(){
+  Widget _like() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
-
             children: [
               Padding(padding: EdgeInsets.all(8)),
               _Icon(Icons.favorite),
@@ -115,7 +106,6 @@ class CommentView extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             color: Colors.grey,
-
           ),
           height: 140,
           width: 350,
