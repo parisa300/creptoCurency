@@ -1,3 +1,4 @@
+import 'package:creptoapp/src/comment/data/modelComment.dart';
 import 'package:creptoapp/src/comment/ui/commentScreen.dart';
 import 'package:creptoapp/src/theme/colors.dart';
 import 'package:creptoapp/src/widget/itemDetail.dart';
